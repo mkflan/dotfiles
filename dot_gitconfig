@@ -1,0 +1,5 @@
+[user]
+	name = mkflan
+	email = makani.flan@gmail.com
+[core]
+	editor = helix

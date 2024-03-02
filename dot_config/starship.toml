@@ -1,0 +1,39 @@
+format = """
+$directory$git_branch$git_status$git_metrics$fill$rust$line_break\
+$character
+"""
+right_format = """$cmd_duration$status"""
+
+[fill]
+symbol = " "
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+
+[git_branch]
+symbol = " "
+style = "magenta"
+format = "on [$symbol$branch(:$remote_branch)]($style) "
+
+[git_status]
+style = "magenta"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+[git_metrics]
+disabled = false
+ignore_submodules = true
+
+[rust]
+symbol = " "
+style = "red"
+format = "[$symbol rustc: $version]($style)"
+
+[cmd_duration]
+disabled = false
+style = "yellow"
+format = "[took $duration]($style)"
+
+[status]
+disabled = false
+format = ' resulted in [\[$status$common_meaning$signal_number$signal_name\]]($style)'
