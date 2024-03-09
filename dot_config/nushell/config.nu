@@ -523,6 +523,7 @@ $env.config = {
 # Aliases
 alias hx = helix
 alias grep = grep --color=auto
+alias dotedit = chezmoi edit --watch
 
 # Starship
 source ~/.cache/starship/init.nu

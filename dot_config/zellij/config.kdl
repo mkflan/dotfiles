@@ -148,14 +148,19 @@ keybinds {
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }    
-        bind "Ctrl y" {
+        bind "Ctrl h" {
             LaunchOrFocusPlugin "file:~/.config/zellij/plugins/harpoon.wasm" {
                 floating true; 
                 move_to_focused_tab true;
             }
         }    
-        bind "F1" {
+        bind "Ctrl m" {
             LaunchOrFocusPlugin "file:~/.config/zellij/plugins/monocle.wasm" {
+                floating true;
+            }
+        }
+        bind "Ctrl f" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm" {
                 floating true;
             }
         }
