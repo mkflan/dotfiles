@@ -3,3 +3,13 @@
 	email = makani.flan@gmail.com
 [core]
 	editor = helix
+[alias]
+	ss = status -s
+	sl = status
+	egc = config --global --edit
+	cm = commit
+	co = checkout
+	cod = checkout .
+	rh = reset HEAD
+	aa = add -A
+	pr = pull --rebase
