@@ -530,3 +530,6 @@ source ~/.cache/starship/init.nu
 
 # Zoxide
 source ~/.zoxide.nu
+
+# Atuin
+source ~/.local/share/atuin/init.nu
