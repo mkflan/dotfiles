@@ -1,0 +1,45 @@
+# Set the Zinit home directory, where plugins will be stored.
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Install Zinit if it isn't.
+if [ ! -d "$ZINIT_HOME" ]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+# Source Zinit.
+source "${ZINIT_HOME}/zinit.zsh"
+
+# Plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light atuinsh/atuin
+zinit light Aloxaf/fzf-tab
+
+# Load completions.
+autoload -U compinit && compinit
+zinit cdreplay -q
+
+# Aliases
+alias cd="z"
+alias ls="eza"
+alias grep="grep --color=auto"
+alias dotedit="chezmoi edit --watch"
+alias cat="bat"
+alias hx="helix"
+
+# Completions
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd*' fzf-preview 'ls $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls $realpath'
+
+# Integrations
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
+eval "$(fzf --zsh)"
+source ~/fzf-git.sh/fzf-git.sh

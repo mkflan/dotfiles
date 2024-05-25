@@ -8,7 +8,7 @@ My development environment is mostly powered by Rust-based tools! All of them ar
 
 - **Operating System**: EndeavourOS (Arch Based)
 - **Terminal Emulator**: Alacritty
-- **Shell**: Nushell
-- **Terminal Multiplexer**: Zellij
+- **Shell**: zsh
+- **Terminal Multiplexer**: tmux
 - **Terminal Prompt**: Starship
 - **Editor**: Helix

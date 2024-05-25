@@ -1,8 +1,23 @@
 [user]
 	name = mkflan
-	email = makani.flan@gmail.com
+	email = mkflan@protonmail.com
+	
 [core]
 	editor = helix
+	pager = delta
+	
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+
+[merge]
+	conflictstyle = diff 3
+
+[diff]
+	colorMoved = default
+
 [alias]
 	ss = status -s
 	sl = status

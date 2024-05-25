@@ -1,82 +1,37 @@
-live_config_reload = true
 import = ["~/.config/alacritty/themes/blood_moon.toml"]
-
-[cursor]
-unfocused_hollow = false
-
-[cursor.style]
-blinking = "On"
-shape = "Beam"
+live_config_reload = true
+shell = { program = "/usr/bin/tmux", args = ["new-session", "-A", "-s", "general"] }
 
 [env]
-TERM = "alacritty"
+TERM = "xterm-256color"
 
-[font]
-size = 12
-
-[font.bold]
-family = "VictorMono Nerd Font"
-style = "SemiBold"
-
-[font.italic]
-family = "Iosevka"
-style = "Light Italic"
-
-[font.normal]
-family = "VictorMono Nerd Font"
-style = "Light"
-
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-action = "PasteSelection"
-key = "Insert"
-mods = "Shift"
-
-[[keyboard.bindings]]
-action = "ResetFontSize"
-key = "Key0"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Plus"
-mods = "Control"
-
-[[keyboard.bindings]]
-action = "DecreaseFontSize"
-key = "Minus"
-mods = "Control"
-
-[mouse]
-hide_when_typing = true
+[window]
+padding = { x = 3, y = 3 }
+opacity = 1.0
+startup_mode = "Maximized"
 
 [scrolling]
 history = 10000
 multiplier = 3
 
+[font]
+size = 10
+normal = { family = "Iosevka Term", style = "Regular" }
+bold = { family = "Iosevka Term", style = "Bold" }
+italic = { family = "Iosevka Term", style = "Italic" }
+
+[cursor]
+style = { shape = "Beam", blinking = "Never" }
+unfocused_hollow = false
+
+[mouse]
+hide_when_typing = true
+
 [selection]
 save_to_clipboard = true
 
-[shell]
-args = ["-l", "-c", "zellij attach --index 0 --create"]
-program = "/usr/bin/nu"
-
-[window]
-decorations_theme_variant = "Dark"
-dynamic_padding = true
-dynamic_title = false
-opacity = 1.0
-startup_mode = "Maximized"
-
-[window.dimensions]
-columns = 100
-lines = 30
+[keyboard]
+bindings = [
+  { key = "Q", mods = "Control", action = "Quit" },
+  { key = "Y", mods = "Control", action = "ClearHistory" }
+]

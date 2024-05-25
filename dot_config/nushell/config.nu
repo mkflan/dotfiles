@@ -524,6 +524,10 @@ $env.config = {
 alias hx = helix
 alias grep = grep --color=auto
 alias dotedit = chezmoi edit --watch
+alias cat = bat
+alias fuck = with-env {TF_ALIAS: "fuck", PYTHONIOENCODING: "utf-8"} {
+    thefuck (history | last 1 | get command.0)
+}
 
 # Starship
 source ~/.cache/starship/init.nu
