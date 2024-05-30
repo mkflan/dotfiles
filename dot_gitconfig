@@ -5,6 +5,9 @@
 [core]
 	editor = helix
 	pager = delta
+
+[init]
+	defaultBranch = master
 	
 [interactive]
 	diffFilter = delta --color-only

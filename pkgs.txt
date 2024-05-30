@@ -7,7 +7,9 @@ delta
 eza
 fzf
 fzf-git.sh
+github-cli
 helix
+python
 starship
 thefuck
 tldr
@@ -17,29 +19,28 @@ tree
 ttc-iosevka
 zoxide
 
-ADDITIONAL:
-bless
+APPS:
 brave-bin
 discord
-dust
+obsidian
+spotify
+
+ADDITIONAL:
+bless
+discord
 gdb
 ghidra
-github-cli
+heaptrack
 hexyl
-htop
 lazygit
 lldb
-marksman-bin
 minicom
 mold
-obsidian
-python
 qemu
 riscv64-elf toolchain
 riscv64-unknown-elf toolchain
 rz-cutter
 rz-ghidra
 spike
-spotify
 taplo-cli
 ttf-victor-mono-nerd

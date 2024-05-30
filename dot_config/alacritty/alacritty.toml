@@ -33,5 +33,5 @@ save_to_clipboard = true
 [keyboard]
 bindings = [
   { key = "Q", mods = "Control", action = "Quit" },
-  { key = "U", mods = "Control", action = "ClearHistory" }
+  { key = "P", mods = "Control|Shift", action = "ClearHistory" }
 ]

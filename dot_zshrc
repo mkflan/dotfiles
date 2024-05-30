@@ -24,7 +24,7 @@ zinit cdreplay -q
 # Aliases
 alias cd="z"
 alias ls="eza"
-alias grep="grep --color=auto"
+alias grep="rg --color=auto"
 alias dotedit="chezmoi edit --watch"
 alias cat="bat"
 alias hx="helix"
