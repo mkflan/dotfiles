@@ -38,6 +38,7 @@ zstyle ':fzf-tab:complete:*' fzf-preview 'eza -1 --color=always $realpath'
 # Environment
 export EDITOR=helix
 export VISTUAL="$EDITOR"
+. "$HOME/.cargo/env"
 
 # Integrations
 eval "$(starship init zsh)"
