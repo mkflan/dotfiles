@@ -21,7 +21,7 @@ bold = { family = "Iosevka Term", style = "Bold" }
 italic = { family = "Iosevka Term", style = "Italic" }
 
 [cursor]
-style = { shape = "Beam", blinking = "Never" }
+style = { shape = "Block", blinking = "Always" }
 unfocused_hollow = false
 
 [mouse]
