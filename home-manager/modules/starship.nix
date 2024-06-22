@@ -1,0 +1,23 @@
+{
+    programs.starship = {
+    enable = true;
+    settings = {
+    	format = "$directory$git_branch$character";
+    	right_format = "$cmd_duration";
+    	character = {
+    		success_symbol = "[❯](green)";
+		error_symbol = "[❯](red)";
+    	};
+    	git_branch = {
+        	symbol = " ";
+        	style = "magenta";
+        	format = "on [$symbol$branch(:$remote_branch)]($style) ";
+    	};
+    	cmd_duration = {
+        	disabled = false;
+        	style = "yellow";
+        	format = "[took $duration]($style)";
+    	};
+    };
+  };
+}
