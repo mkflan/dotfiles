@@ -1,6 +1,6 @@
 # dotfiles
 
-This repository contains the configuration files for my development environment.
+This repository contains the configuration files for my development environment
 
 ## Components of my Development Environment
 
