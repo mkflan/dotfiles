@@ -8,6 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     ./modules/user.nix
+    inputs.sops-nix.nixosModules.sops
   ];
 
   # Bootloader.
@@ -105,10 +106,11 @@
     heaptrack
     minicom
     spike
+    sops
 
     # Desktop apps
     brave
-    discord
+    discord-screenaudio
     obsidian
     spotify
     steam
@@ -124,6 +126,7 @@
     wine
     protonup
     jdk
+    xwayland
   ];
 
   programs.steam.enable = true;
@@ -142,6 +145,11 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # Sops
+  sops.defaultSopsFormat = "yaml";
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.age.keyFile = "/home/mkflan/.config/sops/age/keys.txt";
 
   system.stateVersion = "24.05";
 }
