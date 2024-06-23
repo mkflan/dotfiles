@@ -107,6 +107,7 @@
     minicom
     spike
     sops
+    gnumake
 
     # Desktop apps
     brave
