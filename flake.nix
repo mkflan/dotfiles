@@ -12,6 +12,11 @@
 
 		sops-nix.url = "github:Mic92/sops-nix";
 		lanzaboote.url = "github:nix-community/lanzaboote/v0.4.1";
+
+		rust-overlay = {
+			url = "github:oxalica/rust-overlay";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = { nixpkgs, nixpkgs-unstable, home-manager, ... } @ inputs: 
@@ -24,6 +29,10 @@
 			modules = [ 
 				./core/configuration.nix 
 				inputs.lanzaboote.nixosModules.lanzaboote
+				({ pkgs, ... }: {
+					nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
+					environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+				})
 			];
 		};
 
