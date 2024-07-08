@@ -77,7 +77,6 @@
   environment.systemPackages = with pkgs; [
     # Development environment & CLI tools
     alacritty
-    atuin
     bat
     delta
     eza

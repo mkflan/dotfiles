@@ -7,7 +7,6 @@
 		./modules/tmux.nix
 		./modules/zsh.nix		
 		./modules/fzf.nix
-		./modules/atuin.nix
 		./modules/thefuck.nix
 		./modules/zoxide.nix
 	];

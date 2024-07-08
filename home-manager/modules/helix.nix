@@ -36,6 +36,7 @@
             r = [":w" ":sh home-manager switch --flake ~/nix"];
             l = [":buffer-close"];
             o = [":buffer-close-others"];
+            a = [":buffer-close-all"];
           };
           C-z = ":earlier";
           C-u = ":later";
