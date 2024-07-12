@@ -111,6 +111,7 @@
     spike
     sops
     gnumake
+    rust-analyzer
 
     # Desktop apps
     brave
@@ -131,6 +132,7 @@
     protonup
     jdk
     xwayland
+    xsel
   ];
 
   programs.steam.enable = true;

@@ -2,7 +2,7 @@
   programs.tmux = {
     enable = true;
     sensibleOnTop = false;
-    prefix = "C-s";
+    prefix = "C-Space";
     baseIndex = 1;
     clock24 = true;
     mouse = true;

@@ -31,7 +31,12 @@
 				inputs.lanzaboote.nixosModules.lanzaboote
 				({ pkgs, ... }: {
 					nixpkgs.overlays = [ inputs.rust-overlay.overlays.default ];
-					environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+					environment.systemPackages = let
+						rust = pkgs.rust-bin.nightly.latest.default.override {
+							extensions = [ "miri" "rust-src" ];
+						}; 
+					in
+						[ rust ];
 				})
 			];
 		};

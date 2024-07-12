@@ -21,6 +21,8 @@
 			ls = "eza --color";
 			grep = "rg --color=auto";
 			cat = "bat";
+			nix-dev = "nix develop -c zsh";
+			nix-shell = "nix-shell --command zsh";
 		};
 
 		history = 
