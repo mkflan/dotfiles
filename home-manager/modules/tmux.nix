@@ -14,6 +14,7 @@
 	    tmuxPlugins.sensible
 	    tmuxPlugins.nord
       tmuxPlugins.copycat
+      tmuxPlugins.open
     ];
     extraConfig = ''
       # Color

@@ -125,6 +125,7 @@
     ghidra
     cutter
     lutris
+    wireshark
 
     # Other
     home-manager
