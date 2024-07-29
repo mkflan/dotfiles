@@ -6,7 +6,6 @@
 
     users.mkflan = {
       isNormalUser = true;
-      description = "Makani";
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [];
     };
