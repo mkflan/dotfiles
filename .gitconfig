@@ -1,0 +1,8 @@
+[core]
+	editor = helix
+
+[init]
+	defaultBranch = master
+
+[alias]
+	aa = add -A
