@@ -6,3 +6,6 @@
 
 [alias]
 	aa = add -A
+[user]
+	name = mkflan
+	email = dev.upstage256@slmails.com
