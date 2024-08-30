@@ -1,11 +1,25 @@
+[user]
+	name = mkflan
+	email = dev.upstage256@slmails.com
+
 [core]
 	editor = helix
+	pager = delta
 
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+
+[merge]
+	conflictstyle = diff 3
+
+[diff]
+	colorMoved = default
+	
 [init]
 	defaultBranch = master
 
 [alias]
 	aa = add -A
-[user]
-	name = mkflan
-	email = dev.upstage256@slmails.com
