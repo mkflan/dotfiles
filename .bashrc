@@ -12,3 +12,12 @@
 
 test -s ~/.alias && . ~/.alias || true
 . "$HOME/.cargo/env"
+
+alias cd="z"
+alias grep="rg --color=auto"
+alias ls="eza --color"
+alias cat="bat"
+alias hx="helix"
+
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"

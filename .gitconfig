@@ -12,9 +12,6 @@
 [delta]
 	navigate = true
 
-[merge]
-	conflictstyle = diff 3
-
 [diff]
 	colorMoved = default
 	

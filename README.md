@@ -10,3 +10,9 @@ This repository contains the configuration files for my development environment
 - **Terminal Multiplexer:** tmux
 - **Terminal Prompt:** Starship
 - **Editor**: Helix
+
+# Reproduction
+
+Before attemping to run the installation script, please ensure both `git` and `stow` are installed on your system.
+
+
