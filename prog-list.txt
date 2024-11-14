@@ -1,0 +1,24 @@
+# Enumeration of the programs I use.
+
+git
+delta git pager
+alacritty
+brave browser
+discord
+keepassxc
+bat
+eza
+tmux
+zoxide
+qemu
+stow
+helix
+ripgrep
+syncthing
+obsidian
+newsboat
+spotify
+todoist
+rust
+riscv64 bare metal toolchain
+gcc

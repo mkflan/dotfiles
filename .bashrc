@@ -18,6 +18,7 @@ alias grep="rg --color=auto"
 alias ls="eza --color"
 alias cat="bat"
 alias hx="helix"
+alias dotslink="cd ~/.dotfiles && stow --adopt . && cd -"
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
