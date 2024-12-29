@@ -22,5 +22,8 @@ todoist
 rust
 riscv64 bare metal toolchain
 gcc
+i3
+nitrogen
+pipewire
 
 # For Void Linux

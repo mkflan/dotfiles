@@ -6,8 +6,11 @@ exec_quiet () {
 
 exec_quiet "sudo xbps-install -Sy"
 
-# Install all programs
-exec_quiet "sudo xbps-install -y git stow delta alacritty keepassxc bat eza tmux zoxide helix ripgrep syncthing newsboat flatpak qemu gcc"
+# Install system level components
+exec_quiet "man-pages-devel NetworkManager dbus elogind emptty i3 i3status mesa-dri xorg-server nitrogen network-manager-applet pipewire pa-applet wireplumber xorg xsel"
+
+# Install programs I use
+exec_quiet "sudo xbps-install -y git stow delta alacritty keepassxc bat eza tmux zoxide helix ripgrep syncthing newsboat flatpak qemu gcc clang clang-tools-extra yazi xdg-utils font-iosevka"
 
 # Install Brave Browser, Spotify (maybe get spotify-tui?), Obsidian, Discord, Todoist using flatpak
 exec_quiet "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
