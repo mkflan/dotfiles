@@ -16,9 +16,6 @@ font pango:monospace 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -181,8 +178,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command SCRIPT_DIR=~/.dotfiles/scripts/i3blocks i3blocks -c ~/.config/i3blocks/i3blocks.conf
         position top
-        font 20
-        height 35
+        font 50
 }
 
 exec_always nitrogen --restore
