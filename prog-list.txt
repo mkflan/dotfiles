@@ -21,6 +21,7 @@ newsboat
 spotify
 rust
 gcc
+mpv
 
 ## Void Linux
 i3
