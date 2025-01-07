@@ -1,7 +1,9 @@
-# Enumeration of the programs I use.
+# Programs I Use
+
+## Shared
 
 git
-delta git pager
+delta-git
 alacritty
 brave browser
 discord
@@ -10,7 +12,6 @@ bat
 eza
 tmux
 zoxide
-qemu
 stow
 helix
 ripgrep
@@ -18,12 +19,10 @@ syncthing
 obsidian
 newsboat
 spotify
-todoist
 rust
-riscv64 bare metal toolchain
 gcc
+
+## Void Linux
 i3
 nitrogen
 pipewire
-
-# For Void Linux

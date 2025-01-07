@@ -1,13 +1,12 @@
-test -s ~/.alias && . ~/.alias || true
-
+# Aliases
 alias cd="z"
 alias grep="rg --color=auto"
 alias ls="eza --color"
 alias cat="bat"
-alias dotslink="cd ~/.dotfiles && stow --adopt . && cd -"
+alias dl-void="cd ~/.dotfiles && stow shared && stow void && cd -"
+alias dl-fedora="cd ~/.dotfiles && stow shared && stow fedora && cd -"
 
 export EDITOR="/usr/bin/hx"
-export XBPS_DISTDIR="~/.local/pkgs/void-packages"
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
