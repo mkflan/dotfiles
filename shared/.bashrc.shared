@@ -3,8 +3,8 @@ alias cd="z"
 alias grep="rg --color=auto"
 alias ls="eza --color"
 alias cat="bat"
-alias dl-void="cd ~/.dotfiles && stow shared && stow void && cd -"
-alias dl-fedora="cd ~/.dotfiles && stow shared && stow fedora && cd -"
+alias dl-void="./~/.dotfiles/shared/scripts/dotslink void"
+alias dl-fedora="./~/.dotfiles/shared/scripts/dotslink fedora"
 
 export EDITOR="/usr/bin/hx"
 

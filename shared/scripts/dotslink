@@ -1,0 +1,37 @@
+#!/bin/bash
+
+DISTRO=$1
+
+if [ -z "$DISTRO" ]; then
+  echo "Please provide either 'fedora' or 'void'"
+  exit 1
+fi
+
+cd ~/.dotfiles
+
+if [ ! -d "$DISTRO" ]; then
+    echo "Directory '$DISTRO' does not exist in .dotfiles."
+    exit 1
+fi
+
+# Properly symlink files from the `shared` directory.
+find shared -type f -not -name ".bashrc.shared" -not -path "*/scripts/*" | while read file; do
+  target="$HOME/${file#shared}"
+  target_dir=$(dirname "target")
+
+  mkdir -p "$target_dir"
+
+  ln -sf "$file" "$target"
+done
+
+# Properly symlink files from specified distro directory.
+find "$DISTRO" -type f -not -path "*/scripts/*" | while read file; do
+  target="$HOME/${file#$DISTRO}"
+  target_dir=$(dirname "target")
+
+  mkdir -p "$target_dir"
+
+  ln -sf "$file" "$target"
+done
+
+echo "Dotfiles successfully symlinked"
