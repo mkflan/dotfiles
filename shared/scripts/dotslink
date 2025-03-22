@@ -15,13 +15,15 @@ if [ ! -d "$DISTRO" ]; then
 fi
 
 # Properly symlink files from the `shared` directory.
-find shared -type f -not -name ".bashrc.shared" -not -path "*/scripts/*" | while read file; do
-  target="$HOME/${file#shared}"
+find shared -type f -not -name ".zshrc.shared" -not -path "*/scripts/*" | while read file; do
+  target="$HOME${file#shared}"
   target_dir=$(dirname "target")
 
-  mkdir -p "$target_dir"
+  if [ -d "$target" ]; then
+    mkdir -p "$target"
+  fi
 
-  ln -sf "$file" "$target"
+  ln -sf "$HOME/.dotfiles/$file" "$target"
 done
 
 # Properly symlink files from specified distro directory.
@@ -29,9 +31,11 @@ find "$DISTRO" -type f -not -path "*/scripts/*" | while read file; do
   target="$HOME/${file#$DISTRO}"
   target_dir=$(dirname "target")
 
-  mkdir -p "$target_dir"
+  if [ -d "$target" ]; then
+    mkdir -p "$target"
+  fi
 
-  ln -sf "$file" "$target"
+  ln -sf "$HOME/.dotfiles/$file" "$target"
 done
 
 echo "Dotfiles successfully symlinked"

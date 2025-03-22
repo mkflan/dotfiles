@@ -6,7 +6,7 @@ bufferline = "always"
 true-color = true
 auto-save = true
 mouse = false
-# shell = ["zsh", "-c"]
+shell = ["zsh", "-c"]
 
 [editor.lsp]
 display-messages = true

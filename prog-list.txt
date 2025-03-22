@@ -22,6 +22,8 @@ spotify
 rust
 gcc
 mpv
+zathura
+zathura-pdf-poppler
 
 ## Void Linux
 i3
