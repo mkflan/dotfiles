@@ -17,10 +17,10 @@ fi
 # Properly symlink files from the `shared` directory.
 find shared -type f -not -name ".zshrc.shared" -not -path "*/scripts/*" | while read file; do
   target="$HOME${file#shared}"
-  target_dir=$(dirname "target")
+  target_dir=$(dirname "$target")
 
-  if [ -d "$target" ]; then
-    mkdir -p "$target"
+  if [ ! -d "$target_dir" ]; then
+    mkdir -p "$target_dir"
   fi
 
   ln -sf "$HOME/.dotfiles/$file" "$target"
@@ -28,11 +28,11 @@ done
 
 # Properly symlink files from specified distro directory.
 find "$DISTRO" -type f -not -path "*/scripts/*" | while read file; do
-  target="$HOME/${file#$DISTRO}"
-  target_dir=$(dirname "target")
+  target="$HOME${file#$DISTRO}"
+  target_dir=$(dirname "$target")
 
-  if [ -d "$target" ]; then
-    mkdir -p "$target"
+  if [ ! -d "$target_dir" ]; then
+    mkdir -p "$target_dir"
   fi
 
   ln -sf "$HOME/.dotfiles/$file" "$target"
