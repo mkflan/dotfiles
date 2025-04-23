@@ -46,6 +46,11 @@ alias dl-fedora="~/.dotfiles/shared/scripts/dotslink fedora"
 
 export EDITOR="/usr/bin/hx"
 
+# Over-the-Wire Games
+function bandit() {
+	ssh -p 2220 bandit"$1"@bandit.labs.overthewire.org
+}
+
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(fzf --zsh)"
