@@ -1,0 +1,18 @@
+#!/bin/bash
+
+find . -type f \
+  -not -path "*/scripts/*" -not -path "*/\.git/*" \
+  -not -name "README.md" -not -name ".gitignore" \
+  | cut -c3- | while read file;
+do
+  target="$HOME/$file"
+  target_dir=$(dirname "$target")
+
+  if [ ! -d "$target_dir" ]; then
+    mkdir -p "$target_dir"
+  fi
+
+  ln -sf "$HOME/dotfiles/$file" "$target"
+done
+
+echo "Dotfiles successfully symlinked"

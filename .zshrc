@@ -41,8 +41,7 @@ bindkey '^n' history-search-forward
 alias grep="rg --color=auto"
 alias ls="eza --color"
 alias cat="bat"
-alias dl-void="~/.dotfiles/shared/scripts/dotslink void"
-alias dl-fedora="~/.dotfiles/shared/scripts/dotslink fedora"
+alias dl="~/dotfiles/scripts/dotslink"
 
 export EDITOR="/usr/bin/hx"
 
