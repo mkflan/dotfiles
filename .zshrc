@@ -44,6 +44,7 @@ alias cat="bat"
 alias dl="~/dotfiles/scripts/dotslink"
 
 export EDITOR="/usr/bin/hx"
+export DOTFILES_DIR="$HOME/.dotfiles"
 
 # Over-the-Wire Games
 function bandit() {

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-find . -type f \
+find $DOTFILES_DIR -type f \
   -not -path "*/scripts/*" -not -path "*/\.git/*" \
   -not -name "README.md" -not -name ".gitignore" \
   | cut -c3- | while read file;
@@ -12,7 +12,7 @@ do
     mkdir -p "$target_dir"
   fi
 
-  ln -sf "$HOME/dotfiles/$file" "$target"
+  ln -sf "$DOTFILES_DIR/$file" "$target"
 done
 
 echo "Dotfiles successfully symlinked"
