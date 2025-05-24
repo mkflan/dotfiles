@@ -37,14 +37,14 @@ setopt hist_find_no_dups
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+export EDITOR="/usr/bin/hx"
+export DOTFILES_DIR="$HOME/dotfiles"
+
 # Aliases
 alias grep="rg --color=auto"
 alias ls="eza --color"
 alias cat="bat"
-alias dl="~/dotfiles/scripts/dotslink"
-
-export EDITOR="/usr/bin/hx"
-export DOTFILES_DIR="$HOME/.dotfiles"
+alias dl="$DOTFILES_DIR/scripts/dotslink"
 
 # Over-the-Wire Games
 function bandit() {

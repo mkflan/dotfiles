@@ -2,7 +2,7 @@
 
 setxkbmap us
 feh --bg-scale $HOME/Downloads/ibh.jpg &
-/usr/local/bin/dwmblocks & 
+/usr/local/bin/dwmblocks &
 pipewire &
 pipewire-pulse &
 wireplumber &

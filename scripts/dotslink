@@ -1,9 +1,9 @@
 #!/bin/bash
 
 find $DOTFILES_DIR -type f \
-  -not -path "*/scripts/*" -not -path "*/\.git/*" \
+  -not -path "*/scripts/*" -not -path "*/other/*" -not -path "*/\.git/*" \
   -not -name "README.md" -not -name ".gitignore" \
-  | cut -c3- | while read file;
+  | cut -d"/" -f 5- | while read file;
 do
   target="$HOME/$file"
   target_dir=$(dirname "$target")

@@ -176,7 +176,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-        status_command SCRIPT_DIR=~/.dotfiles/void/scripts/i3blocks i3blocks -c ~/.config/i3blocks/i3blocks.conf
+        status_command SCRIPT_DIR=~/dotfiles/scripts/i3blocks i3blocks -c ~/.config/i3blocks/i3blocks.conf
         position top
         font 50
 }
