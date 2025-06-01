@@ -9,3 +9,12 @@
 # - Install other programs through Flathub: discord, brave browser, obsidian, spotify
 # - Install tmux plugins
 # - Install other things: rust
+
+sudo xbps-install -Syu
+
+sudo xbps-install -Sy git
+
+git clone https://git.suckless.org/dwm $HOME/.config/dwm
+git clone https://github.com/torrinfail/dwmblocks.git $HOME/.config/dwmblocks
+
+sudo xbps-install -Sy flameshot brightnessctl acpi

@@ -45,6 +45,8 @@ alias grep="rg --color=auto"
 alias ls="eza --color"
 alias cat="bat"
 alias dl="$DOTFILES_DIR/scripts/dotslink"
+alias cdwm="cd $HOME/.config/dwm; sudo make clean install; cd -"
+alias cdwmb="cd $HOME/.config/dwmblocks; sudo make clean install; cd -"
 
 # Over-the-Wire Games
 function bandit() {

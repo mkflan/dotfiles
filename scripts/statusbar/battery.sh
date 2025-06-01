@@ -1,11 +1,12 @@
 #!/bin/bash
 
-BAT=$(acpi -b | grep -E -o '[0-9][0-9]?%')
+BATTERY=$(acpi -b | grep -E -o '[0-9][0-9]?%')
 
-echo "$BAT"
-
-# Set urgent flag below 5% or use orange below 20%
-[ ${BAT%?} -le 5 ] && exit 33
-[ ${BAT%?} -le 20 ] && echo "#FF8000"
+# Only print the battery number if the command output starts with a number.
+# On desktop, it won't start with a number as acpi is unable to find the
+# battery for a power supply.
+if [[ $BATTERY =~ ^[0-9]+$ ]]; then
+  echo "󰁹 $BAT"
+fi
 
 exit 0
