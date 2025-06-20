@@ -1,0 +1,13 @@
+#!/bin/bash
+
+[ $# -eq 0 ] && echo "Please pass a path to a Markdown file." && exit 1 
+
+MD_CONTENT=$(cat "$1" | tail -n+3)
+POST_NAME=$(basename "$1" | cut -d'.' -f1)
+DATE=$(date "+%Y-%m-%d")
+VARIABLES=$(printf "+++\ntitle = ${POST_NAME}\ndate = ${DATE}\n+++")
+FINAL_CONTENT=$(printf "${VARIABLES}\n\n${MD_CONTENT}")
+
+echo "$FINAL_CONTENT"
+
+exit 0

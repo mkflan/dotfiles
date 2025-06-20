@@ -5,5 +5,5 @@ feh --bg-scale $HOME/Downloads/ibh.jpg &
 /usr/local/bin/dwmblocks &
 
 while true; do
-  /usr/local/bin/dwm 2> $HOME/.dwm.log
+  dbus-run-session /usr/local/bin/dwm 2> $HOME/.dwm.log
 done
