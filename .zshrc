@@ -37,16 +37,17 @@ setopt hist_find_no_dups
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-export EDITOR="/usr/bin/hx"
-export DOTFILES_DIR="$HOME/dotfiles"
+# export EDITOR="/usr/bin/hx"
+# export DOTFILES_DIR="$HOME/dotfiles"
+# export PATH="~/.local/bin:$PATH"
 
 # Aliases
 alias grep="rg --color=auto"
 alias ls="eza --color"
 alias cat="bat"
 alias dl="$DOTFILES_DIR/scripts/dotslink"
-alias cdwm="cd $HOME/.config/dwm; sudo make clean install; cd -"
-alias cdwmb="cd $HOME/.config/dwmblocks; sudo make clean install; cd -"
+alias cdwm="cd $HOME/dwm; sudo make clean install; cd -"
+alias cdwmb="cd $HOME//dwmblocks; sudo make clean install; cd -"
 
 # Over-the-Wire Games
 function bandit() {

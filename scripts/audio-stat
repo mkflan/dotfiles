@@ -1,0 +1,7 @@
+#!/bin/bash
+
+AUDIO=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -oE "[0-9]+%" | head -1)
+
+echo "🔊 $AUDIO"
+
+exit 0

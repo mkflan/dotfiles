@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pipewire &
+PIPEWIRE_LOG=pipewire.log.boot PIPEWIRE_DEBUG=T pipewire &
 pipewire-pulse &
 wireplumber &
 

@@ -1,9 +1,6 @@
 #!/bin/bash
 
-find $DOTFILES_DIR -type f \
-  -not -path "*/scripts/*" -not -path "*/other/*" -not -path "*/\.git/*" \
-  -not -name "README.md" -not -name ".gitignore" \
-  | cut -d"/" -f 5- | while read file;
+find $DOTFILES_DIR/.config -type f | cut -d"/" -f 5- | while read file;
 do
   target="$HOME/$file"
   target_dir=$(dirname "$target")
@@ -14,5 +11,15 @@ do
 
   ln -sf "$DOTFILES_DIR/$file" "$target"
 done
+echo "Dotfiles successfully symlinked!"
 
-echo "Dotfiles successfully symlinked"
+find $DOTFILES_DIR/scripts -type f | while read script_path;
+do
+  file=$(basename "$script_path")
+  target="$HOME/.local/bin/$file"
+
+  ln -sf "$script_path" "$target"
+done
+echo "Scripts successfully symlinked!"
+
+exit 0
