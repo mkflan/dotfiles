@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BATTERY=$(acpi -b | grep -E -o '[0-9][0-9]?%')
+BATTERY=$(acpi -b | grep -oE '[0-9]+%')
 
 echo "󰁹 $BATTERY"
 # Only print the battery number if the command output starts with a number.
