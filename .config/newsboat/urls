@@ -2,6 +2,7 @@
 https://this-week-in-rust.org/rss.xml "~This Week In Rust" "Programming"
 https://krebsonsecurity.com/feed/ "~Krebs On Security" "Cybersecurity"
 https://bytebreach.com/feed.xml "~Byte Breach" "Cybersecurity"
+https://www.schneier.com/feed/atom/ "~Schneier on Security"
 
 # YouTube
 https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA "~Veritasium" "YouTube"
