@@ -1,0 +1,5 @@
+#!/bin/bash
+
+selection="$(xclip -o)"
+
+echo "$selection" >> "${BM_DIR}/bookmarks"

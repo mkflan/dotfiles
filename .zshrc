@@ -40,14 +40,15 @@ bindkey '^n' history-search-forward
 # export EDITOR="/usr/bin/hx"
 # export DOTFILES_DIR="$HOME/dotfiles"
 # export PATH="~/.local/bin:$PATH"
+export BM_DIR="$HOME/.local/share/bookmarking"
 
 # Aliases
 alias grep="rg --color=auto"
 alias ls="eza --color"
 alias cat="bat"
 alias dl="$DOTFILES_DIR/scripts/dotslink"
-alias cdwm="cd $HOME/dwm; sudo make clean install; cd -"
-alias cdwmb="cd $HOME//dwmblocks; sudo make clean install; cd -"
+alias bdwm="cd dwm; sudo make clean install; cd -"
+alias bdwmb="cd dwmblocks; sudo make clean install; cd -"
 
 # Over-the-Wire Games
 function bandit() {

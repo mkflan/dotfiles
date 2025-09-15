@@ -1,0 +1,18 @@
+#!/bin/bash
+
+search_option=$(echo -e "Search by tag\nSearch all" | rofi -dmenu)
+
+if [[ -n "$search_option" ]]; then
+  case "$search_option" in
+    "Search by tag")
+      selected_tags=$(rofi -dmenu -p "Enter tag(s)")
+      if [[ -n $"selected_tags" ]]; then
+        tags=$(echo "$selected_tags" | tr '\n' '|' | sed 's/|$//')
+        cat "${BM_DIR}/bookmarks" | grep -iE "$tags" | sed 's/ *"[^"]*".*$//' | rofi -dmenu
+      fi
+      ;;
+    "Search all")
+      cat "${BM_DIR}/bookmarks" | cut -d ' ' -f1 | rofi -dmenu
+  esac
+fi
+
