@@ -1,10 +1,13 @@
 #!/bin/sh
 
 setxkbmap us
-feh --bg-scale $HOME/Downloads/ibh.jpg &
-/usr/local/bin/dwmblocks &
-nm-applet &
+# /usr/local/bin/dwmblocks &
+# nm-applet &
 
 while true; do
-  dbus-run-session /usr/local/bin/dwm 2> $HOME/.dwm.log
+  dbus-run-session /bin/sh -c '
+    /usr/local/bin/dwmblocks &
+    nm-applet &
+    exec /usr/local/bin/dwm
+  ' 2> $HOME/.dwm.log
 done

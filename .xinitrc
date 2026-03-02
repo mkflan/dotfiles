@@ -1,8 +1,7 @@
 #!/bin/sh
 
-PIPEWIRE_LOG=pipewire.log.boot PIPEWIRE_DEBUG=T pipewire &
-pipewire-pulse &
-wireplumber &
-xrandr --output DP-2 --rotate right &
+runsvdir ~/.local/service &
+nitrogen --restore &
+xrandr --output DP-2 --rotate right & # For desktop
 
 exec /usr/local/bin/startdwm.sh

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Wait for pipewire socket to be available
+while [ ! -S /run/user/$(id -u)/pipewire-0 ]; do
+  sleep 0.5
+done
+
+exec /usr/bin/pipewire-pulse

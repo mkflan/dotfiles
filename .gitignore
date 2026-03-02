@@ -1,2 +1,3 @@
 shared/.newsboat/cache.db
 shared/.config/tmux/plugins
+**/supervise

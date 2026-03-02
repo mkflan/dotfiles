@@ -1,25 +1,60 @@
 #!/bin/bash
 
-find $DOTFILES_DIR/.config -type f | cut -d"/" -f 5- | while read file;
-do
-  target="$HOME/$file"
-  target_dir=$(dirname "$target")
+set -euo pipefail
 
-  if [ ! -d "$target_dir" ]; then
-    mkdir -p "$target_dir"
+DOTFILES_DIR="${DOTFILES_DIR:-$HOME/dotfiles}" # Default to `$HOME/dotfiles` in case of improperly set environment variable.
+
+link() {
+  local src="$1"
+  local dest="$2"
+  local dest_dir=$(dirname "$dest")
+
+  if [ ! -d "$dest_dir" ]; then
+    mkdir -p "$dest_dir"
   fi
 
-  ln -sf "$DOTFILES_DIR/$file" "$target"
-done
-echo "Dotfiles successfully symlinked!"
+  # Ensure that, if the destination exists, that it is not a symlink.
+  if [ -e "$dest" ] && [ ! -L "$dest" ]; then
+    echo "  WARNING: $dest exists and is not a symlink, exiting"
+    return
+  fi
 
-find $DOTFILES_DIR/scripts -type f | while read script_path;
-do
-  file=$(basename "$script_path")
-  target="$HOME/.local/bin/$file"
+  ln -sf "$src" "$dest"
+  echo "  $src -> $dest"
+}
 
-  ln -sf "$script_path" "$target"
+echo "Linking top-level dotfiles..."
+find "$DOTFILES_DIR" -maxdepth 1 -type f -name ".*" | while read -r src; do
+  file=$(basename "$src")
+  link "$src" "$HOME/$file"
 done
-echo "Scripts successfully symlinked!"
+
+echo "Linking .config..."
+find "$DOTFILES_DIR/.config" -type f | while read -r src; do
+  relative="${src#"$DOTFILES_DIR/"}"
+  link "$src" "$HOME/$relative"
+done
+
+echo "Linking scripts to ~/.local/bin..."
+mkdir -p "$HOME/.local/bin"
+find "$DOTFILES_DIR/scripts" -type f | while read -r src; do
+  file=$(basename "$src")
+  link "$src" "$HOME/.local/bin/$file"
+done 
+
+echo "Linking runit user services to ~/.local/service..."
+if [ -d "$DOTFILES_DIR/runit" ]; then
+  # Ensure only directories with a `run` script are linked.
+  find "$DOTFILES_DIR/runit" -name "run" | while read -r src; do
+    service=$(basename "$(dirname "$src")")
+    dest_dir="$HOME/.local/service/$service"
+    mkdir -p "$dest_dir"
+    link "$src" "$dest_dir/run"
+    chmod +x "$src"
+  done
+fi
+
+echo ""
+echo "All dotfiles successfully symlinked!"
 
 exit 0
