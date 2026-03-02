@@ -3,7 +3,7 @@
 	email = dev.upstage256@slmails.com
 
 [core]
-	editor = helix
+	editor = hx
 	pager = delta
 
 [interactive]
