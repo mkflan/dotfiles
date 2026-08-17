@@ -25,8 +25,8 @@ link() {
 
 echo "Linking top-level dotfiles..."
 find "$DOTFILES_DIR" -maxdepth 1 -type f -name ".*" | while read -r src; do
-  file=$(basename "$src")
-  link "$src" "$HOME/$file"
+  dotfile=$(basename "$src")
+  link "$src" "$HOME/$dotfile"
 done
 
 echo "Linking .config..."

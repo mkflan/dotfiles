@@ -6,6 +6,6 @@ dte() {
 }
 
 while :; do
-  echo "$(dte)"
+  echo -n "$(dte)"
   sleep 5
 done

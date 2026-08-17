@@ -10,7 +10,8 @@ style = "Regular"
 
 [window]
 padding = { x = 3, y = 3 }
-opacity = 1.0
+opacity = 0.75
+decorations = "None"
 startup_mode = "Maximized"
 
 [scrolling]

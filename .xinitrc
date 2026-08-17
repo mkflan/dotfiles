@@ -1,15 +1,7 @@
 #!/bin/sh
 
-# nitrogen --restore &
+nitrogen --restore --set-zoom-fill &
+picom --config ~/.config/picom/picom.conf -b &
+xrdb -merge ~/.Xresources
 
-# if [ "$(hostname)" = "fwl" ]; then
-#   # If on laptop, load DPI changes.
-#   xrdb -merg ~/.Xresources
-# elif [ "$(hostname)" = "fractal" ]; then
-#   # If on desktop, properly orient monitors
-#   xrandr --output HDMI-3 --left-of DP-4 &
-#   xrandr --output DP-4 --rotate right &
-# else :
-# fi
-# 
-# exec spectrwm
+exec spectrwm
