@@ -44,7 +44,7 @@ export BM_DIR="$HOME/.local/share/bookmarking"
 
 # Aliases
 alias grep="rg --color=auto"
-alias ls="eza --color"
+alias ls="eza --color always"
 alias cat="bat"
 alias dl="$DOTFILES_DIR/scripts/dotslink"
 alias bdwm="cd dwm; sudo make clean install; cd -"

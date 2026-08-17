@@ -42,18 +42,6 @@ find "$DOTFILES_DIR/scripts" -type f | while read -r src; do
   link "$src" "$HOME/.local/bin/$file"
 done 
 
-echo "Linking runit user services to ~/.local/service..."
-if [ -d "$DOTFILES_DIR/runit" ]; then
-  # Ensure only directories with a `run` script are linked.
-  find "$DOTFILES_DIR/runit" -name "run" | while read -r src; do
-    service=$(basename "$(dirname "$src")")
-    dest_dir="$HOME/.local/service/$service"
-    mkdir -p "$dest_dir"
-    link "$src" "$dest_dir/run"
-    chmod +x "$src"
-  done
-fi
-
 echo ""
 echo "All dotfiles successfully symlinked!"
 
